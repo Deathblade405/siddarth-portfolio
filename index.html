@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ポートフォリオ | Siddhartha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop class="video-background">
+        <source src="back.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <nav>
+            <div class="slider-container">
+                <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode" />
+                <label class="slider" for="theme-toggle">
+                    <span class="icon light-icon">🌞</span> <!-- Light mode icon -->
+                    <span class="icon dark-icon">🌙</span> <!-- Dark mode icon -->
+                </label>
+            </div>
+            <ul>
+                <li><a href="#about">概要</a></li>
+                <li><a href="#projects">プロジェクト</a></li>
+                <li><a href="#skills">スキル</a></li>
+                <li><a href="#contact">連絡先</a></li>
+               
+
+            </ul>
+           <!-- Dark mode toggle button -->
+        </nav>
+        <div class="header-content">
+            <h1>こんにちは!</h1>
+            <h2>私は Siddhartha です!</h2>
+            <p>開発者</p>
+        </div>
+        
+    </header>
+
+    <section id="about" class="section">
+        <h2>概要</h2>
+        <p>私はインド出身のフロントエンドエンジニアで、クリーンでインタラクティブなウェブデザインに情熱を持っています。ユーザーフレンドリーで直感的なデザインを作成することに重点を置いています。</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>プロジェクト</h2>
+        <div class="project-grid">
+            <div class="project-card fade-in-box" data-title="Quantum Secure Communication Client" data-description="量子スティガーとBB84プロトコルを使用して、データの安全な送信のための堅牢なソリューションを開発し、ユーザーフレンドリーなインターフェースのためにStreamlitと統合しました。">
+                <h3>Quantum Secure Communication Client</h3>
+                <p>量子スティガーとBB84プロトコルを使用して、データの安全な送信のための堅牢なソリューションを開発しました。</p>
+            </div>
+            <div class="project-card fade-in-box" data-title="ELINA_GreenFin" data-description="グリーンファイナンスにおけるトレンドとリスクを予測するためのAIツールを作成し、持続可能な投資決定のための重要な洞察を提供します。">
+                <h3>ELINA_GreenFin</h3>
+                <p>AIを活用して、グリーンファイナンスのトレンドとリスクを予測するツールを作成しました。</p>
+            </div>
+            <div class="project-card fade-in-box" data-title="C3PO" data-description="画像から深度を予測し、ポイントクラウドを生成し、Open3Dを使用して3D表面を再構築するためのニューラルネットワークベースのパイプラインを開発しました。">
+                <h3>C3PO</h3>
+                <p>深度予測から3D表面を再構築するためのニューラルネットワークパイプラインを開発しました。</p>
+            </div>
+            <div class="project-card fade-in-box" data-title="TRANSIT" data-description="リアルタイムのバス追跡とスケジュール管理のためのPythonベースのシステムを開発し、学生ユーザーデータベース機能を実装しました。">
+                <h3>TRANSIT – Real-Time Campus Transport Tracking System</h3>
+                <p>リアルタイムのバス追跡とスケジュール管理のためのPythonベースのシステムを開発し、効率的なキャンパス通学のための学生ユーザーデータベース機能を実装しました。</p>
+            </div>
+            <div class="project-card fade-in-box" data-title="Smart Switch Board" data-description="STM32F103C8T6マイクロコントローラーを使用して、リアルタイムの電力監視のためのスマートスイッチボードを開発しました。">
+                <h3>Smart Switch Board using STM32</h3>
+                <p>STM32F103C8T6マイクロコントローラーとタッチスクリーンインターフェースを使用して、リアルタイムの電力監視のためのスマートスイッチボードを開発しました。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>スキル</h2>
+        <div class="skills-grid">
+            <div class="skills-card slide-in-left" data-title="Programming Languages" data-description="C, C++, Java, Python, SQL, C# & .NET Framework">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <p>C, C++, Java, Python, SQL, C# & .NET Framework</p>
+            </div>
+            <div class="skills-card slide-in-left" data-title="Frameworks" data-description="Django, OpenCL, OpenGL">
+                <h3><i class="fab fa-python"></i> Frameworks</h3>
+                <p>Django, OpenCL, OpenGL</p>
+            </div>
+            <div class="skills-card slide-in-right" data-title="Cloud Platforms" data-description="GCP (Associate), AWS (Foundations), OCI (Foundations)">
+                <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                <p>GCP (Associate), AWS (Foundations), OCI (Foundations)</p>
+            </div>
+            <div class="skills-card slide-in-right" data-title="Design Tools" data-description="Proteus, KiCAD, Blender, Autodesk Fusion 360">
+                <h3><i class="fas fa-pencil-alt"></i> Design Tools</h3>
+                <p>Proteus, KiCAD, Blender, Autodesk Fusion 360</p>
+            </div>
+            <div class="skills-card slide-in-left" data-title="Development Tools" data-description="Visual Studio, VSCode, EclipseIDE, Keil Microvision, MySQL, NSG">
+                <h3><i class="fas fa-tools"></i> Development Tools</h3>
+                <p>Visual Studio, VSCode, EclipseIDE, Keil Microvision, MySQL, NSG</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="section">
+        <h2>連絡先</h2>
+        <p>お気軽にご連絡ください。</p>
+        <form id="contact-form">
+            <div class="email-input-container">
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" placeholder="あなたのメールアドレスを入力してください" required>
+            </div>
+            <div class="message-input-container">
+                <label for="message">メッセージ:</label>
+                <textarea id="message" name="message" placeholder="メッセージを入力してください" required></textarea>
+            </div>
+            <button type="submit" class="contact-btn">メールを送信</button>
+        </form>
+    </section>
+
+    <div id="modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Siddhartha Pundit. 全著作権所有。</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9; /* Soft light background */
+    color: #333;
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Video Background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind other elements */
+    overflow: hidden;
+}
+
+.video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.7; /* Make it more transparent */
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Blurred background */
+    padding: 1rem 2rem; /* Add padding for better aesthetics */
+    z-index: 1000;
+    transition: background-color 0.4s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid #ff4081; /* Soft pink border */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    color: #ff4081; /* Pink text */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 25px; /* More rounded */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 64, 129, 0.3); /* Light pink hover effect */
+    color: #b71c1c; /* Darker pink */
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.6); /* Glow effect */
+}
+
+/* Header Section */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 2rem; /* Add padding for better spacing */
+}
+
+header h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out;
+    color: #000000; /* Soft black */
+    text-shadow: 0 0 20px rgba(255, 64, 129, 0.9); /* Glow effect */
+}
+
+header h2 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-out;
+    color: #ffffff; /* Soft black */
+    text-shadow: 0 0 20px rgba(255, 64, 129, 0.9); /* Glow effect */
+}
+
+header p {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: #ffffff; /* Dark gray */
+    animation: fadeIn 2.5s ease-out;
+    text-shadow: 0 0 15px rgba(156, 39, 176, 0.3); /* Soft glow effect */
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 5%;
+    background-color: rgba(255, 255, 255, 0.95); /* Light background */
+    border-radius: 15px; /* More rounded corners */
+    margin: 20px 0;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode .section {
+    background-color: rgba(30, 30, 30, 0.95); /* Dark background for sections */
+    color: #e0e0e0; /* Light text color */
+}
+
+body.dark-mode nav {
+    background: rgba(50, 50, 50, 0.9); /* Dark navbar */
+    border-bottom: 2px solid #ff4081; /* Keep pink border */
+}
+
+body.dark-mode header h1,
+body.dark-mode header h2,
+body.dark-mode header p {
+    color: #ffffff; /* Light text color in header */
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: rgba(40, 40, 40, 0.9); /* Dark background for footer */
+    color: #e0e0e0; /* Light text color in footer */
+    border-top: 2px solid #ff4081; /* Keep the border color */
+}
+
+/* Email Input and Textarea Styles */
+input[type="email"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 15px; /* Padding for comfort */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+/* Dark Mode Email Input and Textarea Styles */
+body.dark-mode input[type="email"],
+body.dark-mode textarea {
+    background-color: #333; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+    border: 1px solid #444; /* Darker border */
+}
+
+body.dark-mode input[type="email"]:focus,
+body.dark-mode textarea:focus {
+    border-color: #ff4081; /* Highlight border color on focus */
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Fallback color */
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.95); /* White background */
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 50px;
+    border: 1px solid #888;
+    border-radius: 15px; /* More rounded corners */
+    width: 90%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Responsive max width */
+    animation: fadeIn 0.3s; /* Fade-in animation */
+}
+
+/* Dark Mode Styles for Modal */
+body.dark-mode .modal-content {
+    background-color: rgba(40, 40, 40, 0.95); /* Darker background for modal */
+    color: #e0e0e0; /* Light text color in modal */
+}
+
+/* Dark Mode Styles for Modal Close Button */
+body.dark-mode .close-button {
+    color: #ff4081; /* Keep pink color for the close button */
+}
+
+/* Grids for Projects and Skills */
+.project-grid, .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Project and Skills Cards */
+.project-card, .skills-card {
+    background-color: #fff; /* White card background */
+    padding: 23px;
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .skills-card {
+    background-color: #1e1e1e; /* Dark mode card background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.project-card:hover, .skills-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Button Styles */
+.contact-btn {
+    background-color: #ff4081; /* Pink */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px; /* More rounded */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.contact-btn:hover {
+    background-color: #b71c1c; /* Dark pink */
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.5); /* Glow effect */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 1000;
+    border-top: 2px solid #ff4081; /* Top border for the footer */
+}
+
+/* Keyframes for Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 1rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .email-form {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    /* Additional Media Queries for Improved Mobile View */
+    /* Header Section Adjustments */
+    header {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Smaller header font size */
+    }
+
+    header p {
+        font-size: 1.2rem; /* Adjust paragraph font size */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center align navbar items */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Adjust font size for navbar links */
+    }
+
+    .section {
+        padding: 40px 2%; /* Reduce section padding for smaller screens */
+    }
+
+    .project-card, .skills-card {
+        padding: 15px; /* Reduce padding on project and skills cards */
+    }
+
+    .contact-btn {
+        padding: 10px 15px; /* Smaller button padding on mobile */
+        font-size: 0.9rem; /* Smaller button text */
+    }
+
+    /* Email Input and Textarea Adjustments */
+    input[type="email"],
+    textarea {
+        font-size: 0.9rem; /* Smaller font size for inputs */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    header {
+        padding: 0.5rem; /* Even less padding */
+    }
+
+    header h1 {
+        font-size: 2rem; /* Further reduce header size */
+    }
+
+    header p {
+        font-size: 1rem; /* Further reduce paragraph size */
+    }
+
+    nav ul {
+        gap: 0.5rem; /* Smaller gap between navbar items */
+    }
+
+    nav ul li a {
+        padding: 0.5rem; /* Reduce padding for navbar links */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+
+    .section {
+        padding: 20px 1%; /* Minimal padding for sections */
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem; /* Smaller font for project titles */
+    }
+
+    .email-input-container, .message-input-container {
+        margin: 10px 0; /* Less margin for input containers */
+    }
+}
+/* Slider Container */
+.slider-container {
+    position: relative; /* Positioning for the toggle */
+    width: 60px; /* Width of the slider */
+    height: 34px; /* Height of the slider */
+    margin-right: 20px; /* Space from other navbar items */
+}
+
+/* Hide the default checkbox */
+.slider-container input {
+    opacity: 0; /* Hide the default checkbox */
+    width: 0;
+    height: 0;
+}
+
+/* Slider Styling */
+.slider {
+    position: absolute;
+    cursor: pointer; /* Pointer cursor */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Light gray background */
+    transition: background-color 0.4s; /* Smooth background color transition */
+    border-radius: 34px; /* Rounded corners */
+}
+
+/* The circle inside the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Circle height */
+    width: 26px; /* Circle width */
+    left: 4px; /* Position from the left */
+    bottom: 4px; /* Position from the bottom */
+    background-color: white; /* Circle color */
+    border-radius: 50%; /* Make it circular */
+    transition: transform 0.4s; /* Smooth transition for circle movement */
+}
+
+/* Change background color when checked */
+input:checked + .slider {
+    background-color: #ff4081; /* Pink background when checked */
+}
+
+/* Move the circle to the right when checked */
+input:checked + .slider:before {
+    transform: translateX(26px); /* Move circle right */
+}
+
+/* Dark Mode Styles for Slider */
+body.dark-mode .slider {
+    background-color: #444; /* Dark background when dark mode is active */
+}
+
+/* The circle inside the slider when in dark mode */
+body.dark-mode .slider:before {
+    background-color: #ffffff; /* Keep the circle white in dark mode */
+}
+
+/* Icon Styles */
+.icon {
+    position: absolute; /* Positioning for icons */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
+    font-size: 20px; /* Size of the icons */
+    transition: opacity 0.4s; /* Smooth transition for icons */
+}
+
+/* Light icon */
+.light-icon {
+    left: 3px; /* Position for the light icon on the left (adjusted to be slightly left) */
+    opacity: 1; /* Show light icon */
+}
+
+/* Dark icon */
+.dark-icon {
+    left: 29px; /* Position for the dark icon on the right (adjusted to be slightly right) */
+    opacity: 0; /* Hide dark icon initially */
+}
+
+/* Show dark icon when checked */
+input:checked + .slider .dark-icon {
+    opacity: 1; /* Show dark icon */
+}
+
+input:checked + .slider .light-icon {
+    opacity: 0; /* Hide light icon */
+}
